@@ -1,1 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Black Horse Global Solutions</title>
+
+  <meta
+    name="description"
+    content="Black Horse Global Solutions — Every Problem Has a Solution."
+  >
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f6f7f9;
+      color: #151515;
+      line-height: 1.6;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    /* HEADER */
+
+    header {
+      background: #050505;
+      color: white;
+      padding: 16px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid #252525;
+    }
+
+    .nav {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 20px;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+
+    .horse {
+      font-size: 30px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .login-btn {
+      background: white;
+      color: black;
+      border: none;
+      border-radius: 8px;
+      padding: 9px 15px;
+      font-weight: bold;
+    }
+
+    /* HERO */
+
+    .hero {
+      background:
+        radial-gradient(circle at top right, #333 0, #0b0b0b 45%, #000 100%);
+      color: white;
+      padding: 75px 20px 85px;
+    }
+
+    .hero-content {
+      max-width: 1000px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 7vw, 72px);
+      line-height: 1.05;
+      margin-bottom: 18px;
+      letter-spacing: -2px;
+    }
+
+    .hero h1 span {
+      color: #d9a441;
+    }
+
+    .hero p {
+      font-size: 19px;
+      color: #d5d5d5;
+      margin-bottom: 35px;
+    }
+
+    /* SEARCH */
+
+    .search-box {
+      background: white;
+      max-width: 850px;
+      margin: auto;
+      padding: 12px;
+      border-radius: 15px;
+      display: grid;
+      grid-template-columns: 1fr 180px 150px;
+      gap: 10px;
+      box-shadow: 0 15px 40px rgba(0,0,0,.35);
+    }
+
+    .search-box input,
+    .search-box select {
+      border: 1px solid #ddd;
+      border-radius: 9px;
+      padding: 14px;
+      outline: none;
+      background: white;
+    }
+
+    .search-btn {
+      border: none;
+      border-radius: 9px;
+      background: #d9a441;
+      color: #111;
+      font-weight: bold;
+    }
+
+    /* BUTTONS */
+
+    .primary-btn {
+      background: #d9a441;
+      border: none;
+      color: #111;
+      font-weight: bold;
+      padding: 13px 20px;
+      border-radius: 9px;
+    }
+
+    .secondary-btn {
+      background: transparent;
+      border: 1px solid #777;
+      color: white;
+      font-weight: bold;
+      padding: 12px 20px;
+      border-radius: 9px;
+    }
+
+    /* SECTION */
+
+    section {
+      padding: 65px 20px;
+    }
+
+    .container {
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-title h2 {
+      font-size: 34px;
+      margin-bottom: 8px;
+    }
+
+    .section-title p {
+      color: #666;
+    }
+
+    /* COUNTRY CARDS */
+
+    .countries {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 15px;
+    }
+
+    .country {
+      background: white;
+      border: 1px solid #e3e3e3;
+      border-radius: 12px;
+      padding: 22px 10px;
+      text-align: center;
+      transition: .2s;
+    }
+
+    .country:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0,0,0,.08);
+    }
+
+    .flag {
+      font-size: 35px;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .country strong {
+      display: block;
+    }
+
+    .country small {
+      color: #777;
+    }
+
+    /* HOW IT WORKS */
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .step {
+      background: white;
+      border-radius: 14px;
+      padding: 25px;
+      border: 1px solid #e6e6e6;
+    }
+
+    .step-number {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #111;
+      color: #d9a441;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .step h3 {
+      margin-bottom: 8px;
+    }
+
+    .step p {
+      color: #666;
+      font-size: 14px;
+    }
+
+    /* CTA */
+
+    .cta {
+      background: #101010;
+      color: white;
+      border-radius: 20px;
+      padding: 50px 30px;
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: 35px;
+      margin-bottom: 10px;
+    }
+
+    .cta p {
+      color: #ccc;
+      margin-bottom: 25px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #050505;
+      color: white;
+      padding: 40px 20px;
+      margin-top: 50px;
+    }
+
+    .footer-grid {
+      max-width: 1150px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 30px;
+    }
+
+    footer h3 {
+      margin-bottom: 12px;
+    }
+
+    footer a {
+      display: block;
+      color: #aaa;
+      text-decoration: none;
+      margin: 6px 0;
+      font-size: 14px;
+    }
+
+    .copyright {
+      max-width: 1150px;
+      margin: 30px auto 0;
+      padding-top: 20px;
+      border-top: 1px solid #292929;
+      color: #777;
+      font-size: 13px;
+    }
+
+    /* MODAL */
+
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.7);
+      z-index: 2000;
+      padding: 20px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      width: 100%;
+      max-width: 500px;
+      background: white;
+      border-radius: 15px;
+      padding: 30px;
+      position: relative;
+    }
+
+    .close {
+      position: absolute;
+      right: 15px;
+      top: 10px;
+      border: none;
+      background: none;
+      font-size: 25px;
+    }
+
+    .modal-content h2 {
+      margin-bottom: 8px;
+    }
+
+    .modal-content p {
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+      font-size: 14px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      outline: none;
+    }
+
+    .form-group textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .submit-btn {
+      width: 100%;
+      background: #111;
+      color: white;
+      border: none;
+      border-radius: 9px;
+      padding: 13px;
+      font-weight: bold;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .search-box {
+        grid-template-columns: 1fr;
+      }
+
+      .countries {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .steps {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 500px) {
+
+      .hero {
+        padding: 55px 15px 65px;
+      }
+
+      section {
+        padding: 45px 15px;
+      }
+
+      .countries {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header>
+    <nav class="nav">
+
+      <div class="logo">
+        <span class="horse">🐎</span>
+        <span>BLACK HORSE</span>
+      </div>
+
+      <div class="nav-links">
+        <a href="#how">How It Works</a>
+        <a href="#countries">Countries</a>
+        <a href="#trust">Trust & Safety</a>
+        <button class="login-btn" onclick="openModal('loginModal')">
+          Login
+        </button>
+      </div>
+
+    </nav>
+  </header>
+
+
+  <!-- HERO -->
+
+  <main>
+
+    <section class="hero">
+
+      <div class="hero-content">
+
+        <h1>
+          Every Problem<br>
+          Has a <span>Solution.</span>
+        </h1>
+
+        <p>
+          Find trusted professionals to solve problems wherever you are.
+        </p>
+
+        <div class="search-box">
+
+          <input
+            id="problemSearch"
+            type="text"
+            placeholder="What problem do you need solved?"
+          >
+
+          <select id="countrySelect">
+            <option value="">Select country</option>
+            <option>🇬🇧 United Kingdom</option>
+            <option>🇺🇸 United States</option>
+            <option>🇨🇦 Canada</option>
+            <option>🇦🇺 Australia</option>
+            <option>🇮🇹 Italy</option>
+            <option>🇩🇪 Germany</option>
+            <option>🇫🇷 France</option>
+            <option>🇪🇸 Spain</option>
+            <option>🇳🇱 Netherlands</option>
+          </select>
+
+          <button class="search-btn" onclick="searchProblem()">
+            Search
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- COUNTRIES -->
+
+    <section id="countries">
+
+      <div class="container">
+
+        <div class="section-title">
+
+          <h2>Choose Your Country</h2>
+
+          <p>
+            Find professionals in your own country and city.
+          </p>
+
+        </div>
+
+        <div class="countries">
+
+          <div class="country">
+            <span class="flag">🇬🇧</span>
+            <strong>United Kingdom</strong>
+            <small>London · Manchester</small>
+          </div>
+
+          <div class="country">
+            <span class="flag">🇺🇸</span>
+            <strong>United States</strong>
+            <small>New York · More</small>
+          </div>
+
+          <div class="country">
+            <span class="flag">🇨🇦</span>
+            <strong>Canada</strong>
+            <small>Toronto · More</small>
+          </div>
+
+          <div class="country">
+            <span class="flag">🇦🇺</span>
+            <strong>Australia</strong>
+            <small>Sydney · Melbourne</small>
+          </div>
+
+          <div class="country">
+            <span class="flag">🇮🇹</span>
+            <strong>Italy</strong>
+            <small>Rome · Milan</small>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- HOW IT WORKS -->
+
+    <section id="how">
+
+      <div class="container">
+
+        <div class="section-title">
+
+          <h2>How Black Horse Works</h2>
+
+          <p>
+            A simple way to connect problems with solutions.
+          </p>
+
+        </div>
+
+        <div class="steps">
+
+          <div class="step">
+
+            <div class="step-number">1</div>
+
+            <h3>Post a Problem</h3>
+
+            <p>
+              Tell us what you need. Add photos, location,
+              budget and details.
+            </p>
+
+          </div>
+
+          <div class="step">
+
+            <div class="step-number">2</div>
+
+            <h3>Find Professionals</h3>
+
+            <p>
+              Discover professionals near you based on
+              location, skills and reviews.
+            </p>
+
+          </div>
+
+          <div class="step">
+
+            <div class="step-number">3</div>
+
+            <h3>Choose a Solution</h3>
+
+            <p>
+              Compare offers and choose the professional
+              that fits your needs.
+            </p>
+
+          </div>
+
+          <div class="step">
+
+            <div class="step-number">4</div>
+
+            <h3>Get It Done</h3>
+
+            <p>
+              Complete the job, confirm the result and
+              leave a review.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- TRUST -->
+
+    <section id="trust">
+
+      <div class="container">
+
+        <div class="cta">
+
+          <h2>Built Around Trust</h2>
+
+          <p>
+            Profiles, reviews, verification and secure
+            transaction infrastructure will help create
+            a safer marketplace.
+          </p>
+
+          <div class="cta-buttons">
+
+            <button
+              class="primary-btn"
+              onclick="openModal('problemModal')"
+            >
+              Post a Problem
+            </button>
+
+            <button
+              class="secondary-btn"
+              onclick="openModal('professionalModal')"
+            >
+              Become a Professional
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="footer-grid">
+
+      <div>
+
+        <h3>🐎 Black Horse</h3>
+
+        <p style="color:#aaa;font-size:14px;">
+          Black Horse Global Solutions
+        </p>
+
+        <p style="color:#777;font-size:13px;margin-top:8px;">
+          Every Problem Has a Solution.
+        </p>
+
+      </div>
+
+      <div>
+
+        <h3>Platform</h3>
+
+        <a href="#how">How It Works</a>
+        <a href="#countries">Countries</a>
+        <a href="#">Find Professionals</a>
+        <a href="#">Post a Problem</a>
+
+      </div>
+
+      <div>
+
+        <h3>Trust</h3>
+
+        <a href="#">Safety</a>
+        <a href="#">Verification</a>
+        <a href="#">Fees</a>
+        <a href="#">Disputes</a>
+
+      </div>
+
+      <div>
+
+        <h3>Legal</h3>
+
+        <a href="#">Terms & Conditions</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Cookie Policy</a>
+
+      </div>
+
+    </div>
+
+    <div class="copyright">
+
+      © 2026 Black Horse Global Solutions. All rights reserved.
+
+    </div>
+
+  </footer>
+
+
+  <!-- POST PROBLEM MODAL -->
+
+  <div id="problemModal" class="modal">
+
+    <div class="modal-content">
+
+      <button class="close" onclick="closeModal('problemModal')">
+        ×
+      </button>
+
+      <h2>Post a Problem</h2>
+
+      <p>
+        Tell us what you need help with.
+      </p>
+
+      <div class="form-group">
+
+        <label>Problem</label>
+
+        <input
+          id="problemTitle"
+          type="text"
+          placeholder="e.g. My washing machine is broken"
+        >
+
+      </div>
+
+      <div class="form-group">
+
+        <label>Country</label>
+
+        <select>
+          <option>United Kingdom</option>
+          <option>United States</option>
+          <option>Canada</option>
+          <option>Australia</option>
+          <option>Italy</option>
+        </select>
+
+      </div>
+
+      <div class="form-group">
+
+        <label>Details</label>
+
+        <textarea
+          placeholder="Describe your problem..."
+        ></textarea>
+
+      </div>
+
+      <button
+        class="submit-btn"
+        onclick="submitDemo('problem')"
+      >
+        Continue
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- PROFESSIONAL MODAL -->
+
+  <div id="professionalModal" class="modal">
+
+    <div class="modal-content">
+
+      <button
+        class="close"
+        onclick="closeModal('professionalModal')"
+      >
+        ×
+      </button>
+
+      <h2>Become a Professional</h2>
+
+      <p>
+        Connect with customers who need your skills.
+      </p>
+
+      <div class="form-group">
+
+        <label>Your Name</label>
+
+        <input
+          type="text"
+          placeholder="Full name"
+        >
+
+      </div>
+
+      <div class="form-group">
+
+        <label>Your Skill</label>
+
+        <input
+          type="text"
+          placeholder="e.g. Electrician"
+        >
+
+      </div>
+
+      <div class="form-group">
+
+        <label>Country</label>
+
+        <select>
+          <option>United Kingdom</option>
+          <option>United States</option>
+          <option>Canada</option>
+          <option>Australia</option>
+          <option>Italy</option>
+        </select>
+
+      </div>
+
+      <button
+        class="submit-btn"
+        onclick="submitDemo('professional')"
+      >
+        Continue
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- LOGIN MODAL -->
+
+  <div id="loginModal" class="modal">
+
+    <div class="modal-content">
+
+      <button
+        class="close"
+        onclick="closeModal('loginModal')"
+      >
+        ×
+      </button>
+
+      <h2>Welcome Back</h2>
+
+      <p>
+        Customer and professional login will be connected
+        to secure authentication in the next stage.
+      </p>
+
+      <div class="form-group">
+
+        <label>Email</label>
+
+        <input
+          type="email"
+          placeholder="you@example.com"
+        >
+
+      </div>
+
+      <div class="form-group">
+
+        <label>Password</label>
+
+        <input
+          type="password"
+          placeholder="Password"
+        >
+
+      </div>
+
+      <button
+        class="submit-btn"
+        onclick="submitDemo('login')"
+      >
+        Login
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <script>
+
+    function openModal(id) {
+      document.getElementById(id).classList.add("active");
+    }
+
+    function closeModal(id) {
+      document.getElementById(id).classList.remove("active");
+    }
+
+    function searchProblem() {
+
+      const problem =
+        document.getElementById("problemSearch").value.trim();
+
+      const country =
+        document.getElementById("countrySelect").value;
+
+      if (!problem) {
+        alert("Please describe the problem you need solved.");
+        return;
+      }
+
+      if (!country) {
+        alert("Please select your country.");
+        return;
+      }
+
+      alert(
+        "Black Horse search received!\n\n" +
+        "Problem: " + problem +
+        "\nCountry: " + country +
+        "\n\nReal professional matching will be connected in the next stage."
+      );
+    }
+
+    function submitDemo(type) {
+
+      if (type === "problem") {
+
+        alert(
+          "Your problem form is working.\n\n" +
+          "The real database and account system will be connected in the next stage."
+        );
+
+      } else if (type === "professional") {
+
+        alert(
+          "Professional registration form is working.\n\n" +
+          "Real KYC and account creation will be connected in the next stage."
+        );
+
+      } else if (type === "login") {
+
+        alert(
+          "Login interface is working.\n\n" +
+          "Secure Supabase authentication will be connected in the next stage."
+        );
+
+      }
+
+    }
+
+    window.addEventListener("click", function(event) {
+
+      if (event.target.classList.contains("modal")) {
+
+        event.target.classList.remove("active");
+
+      }
+
+    });
+
+  </script>
+
+</body>
+</html>
