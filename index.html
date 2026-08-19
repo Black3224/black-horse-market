@@ -1047,11 +1047,29 @@
 
 <script>
 const SUPABASE_URL = "https://iangxzgqhqkjkiopfvmo.supabase.co";
-const SUPABASE_PUBLISHABLE_KEY = "YOUR_PUBLISHABLE_KEY";
+const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_Gq1S7006a4PDyoP7FE2XzA_47rmtq4M";
 
 const supabaseClient = window.supabase.createClient(
   SUPABASE_URL,
   SUPABASE_PUBLISHABLE_KEY
 );
+
+async function loadJobs() {
+  const { data, error } = await supabaseClient
+    .from("job")
+    .select("id, title, description, location, salary");
+
+  if (error) {
+    console.error("Jobs error:", error);
+    return;
+  }
+
+  console.log("Jobs from Supabase:", data);
+}
+
+loadJobs();
 </script>
+
+</body>
 </html>
+
